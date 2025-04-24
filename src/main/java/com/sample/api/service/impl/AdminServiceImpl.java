@@ -8,10 +8,8 @@ import com.sample.api.mapper.AdminMapper;
 import com.sample.api.repository.BrandRepository;
 import com.sample.api.repository.CategoryRepository;
 import com.sample.api.service.AdminService;
-import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.BadRequestException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -19,7 +17,6 @@ import org.springframework.web.server.ResponseStatusException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -27,6 +24,7 @@ public class AdminServiceImpl implements AdminService {
 
     private final BrandRepository brandRepository;
     private final CategoryRepository categoryRepository;
+
     @Override
     @Transactional
     public CreateResponseDto create(CreateRequestDto request) {
@@ -41,11 +39,11 @@ public class AdminServiceImpl implements AdminService {
         });
 
         brandRepository.findBandByBrandName(request.getBrand()).ifPresent(
-                existing -> {
-                    throw new ResponseStatusException(
-                            HttpStatus.BAD_REQUEST,
-                            "Brand already exists: " + request.getBrand());
-                }
+            existing -> {
+                throw new ResponseStatusException(
+                        HttpStatus.BAD_REQUEST,
+                        "Brand already exists: " + request.getBrand());
+            }
         );
 
         Timestamp currentTime = Timestamp.valueOf(LocalDateTime.now());

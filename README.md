@@ -27,25 +27,20 @@ This project is a **backend REST API service** designed to manage and analyze pr
 - IDE (Recommended: IntelliJ IDEA)
 
 ### 🔧 Build Steps
-1. Clone the repository
-```bash
-git clone https://github.com/Sotatek-VuongTa/sample-api.git
-```
 
-
-2 Build the Project
+1 Build the Project
 
 ```bash
 mvn clean install
 ```
 
-3 🧪 Run Unit Tests
+2 🧪 Run Unit Tests
 
 ```bash
 mvn test
 ```
 
-4 ▶️ Run the Application
+3 ▶️ Run the Application
 
 ```bash
 mvn spring-boot:run
