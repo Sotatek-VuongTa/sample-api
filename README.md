@@ -50,10 +50,3 @@ mvn test
 ```bash
 mvn spring-boot:run
 ```
-
-5 🌐 Access API documentation
-
-```
-http://localhost:8080/swagger-ui/index.html
-```
-
