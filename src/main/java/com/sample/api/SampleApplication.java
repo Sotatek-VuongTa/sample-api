@@ -1,13 +1,14 @@
-package com.musina.api;
+package com.sample.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-public class MusinaApplication {
+public class SampleApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MusinaApplication.class, args);
+		SpringApplication.run(SampleApplication.class, args);
 	}
 
 }
